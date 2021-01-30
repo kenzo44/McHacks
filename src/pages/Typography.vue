@@ -33,7 +33,7 @@
               </label>
             </p>
           </li>
-          <button onclick = "submit()" class="btn waves-effect col s12">Submit</button>
+          <button @click.prevent="submit()" class="btn waves-effect col s12">Submit</button>
         </ul>
       </div>
       </div>
@@ -72,6 +72,7 @@ export default {
       this.newTodo = '';
     },
     deleteTodo(todo) {
+      console.log('fuck')
       const todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
     },
