@@ -16,6 +16,7 @@
           {{title}}
         </a>
       </div>
+      
       <slot>
 
       </slot>
@@ -30,10 +31,13 @@
           </sidebar-link>
         </slot>
       </ul>
+      
       <moving-arrow :move-y="arrowMovePx">
 
       </moving-arrow>
+      
     </div>
+    
   </div>
 </template>
 <script>
@@ -43,7 +47,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Paper Dashboard"
+      default: "Choice Point"
     },
     backgroundColor: {
       type: String,

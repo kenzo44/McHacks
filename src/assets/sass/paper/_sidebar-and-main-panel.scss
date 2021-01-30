@@ -26,7 +26,6 @@
     background-size: cover;
     background-position: center center;
   }
-
 }
 
 .wrapper .sidebar {
@@ -54,18 +53,18 @@
       line-height: 40px;
       text-align: left;
 
-      .logo-img{
-          width: 40px;
-          display: inline-block;
-          height: 40px;
-          margin-left: 0px;
-          margin-right: 10px;
-          background: white;
-          border-radius: 40px;
-          text-align: center;
+      .logo-img {
+        width: 40px;
+        display: inline-block;
+        height: 40px;
+        margin-left: 0px;
+        margin-right: 10px;
+        // background: white;
+        border-radius: 40px;
+        text-align: center;
 
-        img{
-            max-width: 21px;
+        img {
+          max-width: 45px;
         }
       }
     }
@@ -81,7 +80,7 @@
         padding-left: 25px;
         padding-right: 25px;
 
-        opacity: .7;
+        opacity: 0.7;
       }
 
       &:hover > .nav-link {
@@ -151,7 +150,6 @@
   &[data-active-color="danger"] {
     @include sidebar-active-color($danger-color);
   }
-
 }
 
 .main-panel {
@@ -181,8 +179,8 @@
 .main-panel {
   -webkit-transition-property: top, bottom;
   transition-property: top, bottom;
-  -webkit-transition-duration: .2s, .2s;
-  transition-duration: .2s, .2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
   -webkit-transition-timing-function: linear, linear;
   transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch;
