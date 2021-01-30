@@ -16,7 +16,9 @@ choicepoint.space is a web-based dashboard to help counselors implement this str
 
 ## How we built it
 
-Front-end is built with Vue.js
+
+Front-end is built with Vue.js and Bootstrap.
+
 
 ## Challenges we ran into
 
