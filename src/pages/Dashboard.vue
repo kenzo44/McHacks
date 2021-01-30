@@ -21,7 +21,7 @@
     <!--Charts-->
     <div class="row">
 
-      <div class="col-12">
+      <!-- <div class="col-12">
         <chart-card title="Users behavior"
                     sub-title="24 Hours performance"
                     :chart-data="usersChart.data"
@@ -35,7 +35,7 @@
             <i class="fa fa-circle text-warning"></i> Click Second Time
           </div>
         </chart-card>
-      </div>
+      </div> -->
 
       <div class="col-md-6 col-12">
         <chart-card title="Email Statistics"
@@ -75,6 +75,13 @@
 import { StatsCard, ChartCard } from "@/components/index";
 import Chartist from 'chartist';
 export default {
+  mounted () {
+    document.body.classList.add('no-scroll')
+  },
+
+  destroyed () {
+    document.body.classList.remove('no-scroll')
+  },
   components: {
     StatsCard,
     ChartCard
