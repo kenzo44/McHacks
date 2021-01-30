@@ -90,26 +90,34 @@ export default {
   flex-grow: 1;
 }
 
-.btn {
-  display: flex;
-  flex-grow: none;
+.waves-effect {
+  width: 20px;
 }
 
 .inputarea {
-  width: 80%;
+  width: 90%;
+
 }
 
-.collection {
+/*.collection {
   flex-direction: column;
   justify-content: space-between;
-}
-
-
+}*/
 
 .delete-text {
   color: red;
   font-size: 20px;
   justify-content: right;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  flex-grow: 1;
 }
 
 </style>
