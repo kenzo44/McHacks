@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
 		<div>
-			<button @click="type = 'range'">Range</button>
-			<button @click="type = 'single'">Single</button>
+			<button @click="type = 'range'" id='btn'>Range</button>
+			<button @click="type = 'single'" id='btn'>Single</button>
 		</div>
 		<br />
 		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
@@ -32,8 +32,32 @@ export default {
 
 <style>
 #app {
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FFFFFF;*/
+  color: #212120;
+  font-size: 25px;
 	text-align: center;
-	padding: 50px;
 	font-family: Arial, Roboto;
 }
+#btn {
+  font-size: 10px;
+}
+
+.vcs-clickable {
+  background-color: #d4f4b7;
+  border: 2px solid white;
+  border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 574px) {
+.vcs-table__day {
+  height: 50px;
+  width: 50px;
+  padding: -20px;
+}
+}
+
 </style>
