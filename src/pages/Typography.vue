@@ -7,9 +7,9 @@
       <div class="row">
         <form @submit.prevent="submitTodo" class="col s6 offset-s3">
           <div class="input-field">
-            <i class="material-icons prefix">list</i>
-            <textarea v-model="newTodo" id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">What to do?</label>
+            <i class="material-icons prefix"></i>
+            <textarea v-model="newTodo" id="icon_prefix2" class="inputarea"></textarea>
+            <label for="icon_prefix2"></label>
           </div>
           <button class="btn waves-effect col s12">Add</button>
         </form>
@@ -17,13 +17,13 @@
       <div class="row">
         <ul class="collection col s6 offset-s3">
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
-            <p>
+            <p class="list-item">
               <label>
                 <input type="checkbox" :checked=todo.done @change="todo.done = !todo.done" />
                 <span>{{todo.title}}</span>
                 <span>
                   <a @click.prevent="deleteTodo(todo)">
-                    <i class="material-icons right teal-text">delete</i>
+                    <i class="material-icons right delete-text">X</i>
                   </a>
                 </span>
               </label>
@@ -74,7 +74,42 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 .header{
   margin-top: 100px;
 }
+
+.col {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.input-field {
+  flex-grow: 1;
+}
+
+.btn {
+  display: flex;
+  flex-grow: none;
+}
+
+.inputarea {
+  width: 80%;
+}
+
+.collection {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.delete-text {
+  color: red;
+  font-size: 20px;
+  justify-content: right;
+}
+
 </style>
