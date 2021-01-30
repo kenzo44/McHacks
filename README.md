@@ -1,109 +1,47 @@
+# [Vue Paper Dashboard](https://cristijora.github.io/vue-paper-dashboard/)
 
-# Vue Material Admin
+> Admin dashboard based on paper dashboard UI template + vue-router
 
+This project is a vue version of [Paper-dashboard](https://www.creative-tim.com/product/paper-dashboard)
+designed for vue js.The dashboard includes vue-router
 
-[![CircleCI](https://circleci.com/gh/tookit/vue-material-admin/tree/dev.svg?style=svg)](https://circleci.com/gh/tookit/vue-material-admin/tree/dev)
+Check the [Live Demo here](https://cristijora.github.io/vue-paper-dashboard).
 
-English | [简体中文](./README.zh-CN.md) 
+[Nuxt Version (outdated Bootstrap 3)](https://github.com/cristijora/vue-paper-dashboard-nuxt)
+![](http://i.imgur.com/3iC1hOs.gif)
 
-About vuetify deveopment, please check my blog [http://isocked.com], (A vuepress theme made with vuetify)
+## Documentation
+Link to [Documentation](http://vuejs.creative-tim.com/vue-paper-dashboard/documentation/)
 
-## Plan and features
-* add i18n support
-* refactor media page
-* reffactor mail page
-* build a rest api for integration [vma-api](https://github.com/tookit/vma-api)
-* build a websocket server for integrating chat app
+## Build Setup
 
-## Introduction
-Vue Material Admin Template is a [Vue](https://vuejs.org/index.html/) Based Material Design Admin Template.
-And use [Vuetifyjs](https://vuetifyjs.com/) as base framework.
-Vuetify is Awesome.
-
-## Discrod Change
-[Discrod channel](https://discord.gg/7f6TVx)
-
-## Demo
-[http://vma.isocked.com/#/dashboard]
-## Preview
-![Preivew](http://vma.isocked.com//static/preview/01_preview.png)
-
-## Project Structure
-``` bash
-├── build
-├── config (Webpack)
-├── src
-│   ├── api
-│   ├── components
-│   ├── mixins
-│   ├── views (or views)
-│   ├── router
-│   ├── store
-│   ├── util
-│   ├── theme
-│   │   ├── default.sass
-│   └── App.vue
-│   └── event.js
-│   └── main.js
-├── dist
-├── release
-├── static (or asset)
-├── mock (or script to build mock data)
-├── node_modules
-├── test
-├── README.md
-├── package.json
-├── index.html
-└── .gitignore
+### install dependencies
 ```
-
-## Project setup
+npm install
 ```
-yarn install
+### serve with hot reload at localhost:8080
 ```
-
-### Compiles and hot-reloads for development
+npm run dev
 ```
-yarn run serve
+### build for production with minification
 ```
-
-### Compiles and minifies for production
+npm run build
 ```
-yarn run build
+### lint
 ```
-
-### Run your tests
+npm run lint
 ```
-yarn run test
-```
+## Contribution guide
+* Fork the repository
+* `npm install` or `yarn install`
+* Make changes
+* Open Pull Request
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-### Reference
-
-* [Vuetifyjs](https://vuetifyjs.com/)
-* [Vue](https://vuejs.org/index.html/)
-* [ICON](https://materialdesignicons.com/)
-* [ECharts](http://echarts.baidu.com/option.html)
-* [SASS](http://sass-lang.com/)
-
-### Donate
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
-
-
-[Paypal Me](https://www.paypal.me/tookit)
-
-[Buy me a coffee](https://www.buymeacoffee.com/tookit)
-
-<a href="https://www.buymeacoffee.com/tookit" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+For detailed explanation on how things work, checkout the [guide](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md)
+- [CHANGELOG](./CHANGELOG.md)
+- [version-badge](https://img.shields.io/badge/version-2.0.0-blue.svg)
+- [license-badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## License
 
-[MIT](https://github.com/tookit/vue-material-admin/blob/master/LICENSE)
+[MIT](https://github.com/creativetimofficial/vue-paper-dashboard/blob/master/LICENSE.md)

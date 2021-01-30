@@ -1,24 +1,29 @@
-import Vue from 'vue'
-import router from './router/'
-import store from './store/'
-import './registerServiceWorker'
-import './plugins/vuetify'
-import './theme/default.sass'
+/*!
 
-import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import axios from 'axios'
-import { Model } from 'vue-api-query'
-Model.$http = axios
-import '@mdi/font/css/materialdesignicons.css'
+ =========================================================
+ * Vue Paper Dashboard - v2.0.0
+ =========================================================
 
-Vue.config.productionTip = false
+ * Product Page: http://www.creative-tim.com/product/paper-dashboard
+ * Copyright 2019 Creative Tim (http://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard/blob/master/LICENSE.md)
 
-const app = new Vue({
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+import Vue from "vue";
+import App from "./App";
+import router from "./router/index";
+
+import PaperDashboard from "./plugins/paperDashboard";
+import "vue-notifyjs/themes/default.css";
+
+Vue.use(PaperDashboard);
+
+/* eslint-disable no-new */
+new Vue({
   router,
-  store,
-  vuetify,
-  render: (h) => h(App)
-})
-
-app.$mount('#app')
+  render: h => h(App)
+}).$mount("#app");
