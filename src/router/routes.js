@@ -38,11 +38,6 @@ const routes = [
         component: Icons
       },
       {
-        path: "maps",
-        name: "maps",
-        component: Maps
-      },
-      {
         path: "typography",
         name: "typography",
         component: Typography
