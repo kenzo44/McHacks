@@ -11,9 +11,12 @@
     "dev": "npm run serve"
   },
   "dependencies": {
+    "@romanran/vue-simple-calendar": "^1.0.14",
     "bootstrap": "^4.0.0",
     "chartist": "^0.11.0",
+    "date-fns": "^2.16.1",
     "es6-promise": "^4.2.4",
+    "lodash-es": "^4.17.20",
     "vue": "^2.6.10",
     "vue-clickaway": "^2.1.0",
     "vue-notifyjs": "^0.3.0",
