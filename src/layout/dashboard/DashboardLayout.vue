@@ -4,7 +4,7 @@
       <template slot="links">
         <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel"/>
         <sidebar-link to="/stats" name="User Profile" icon="ti-user"/>
-        <sidebar-link to="/table-list" name="Calendar" icon="ti-view-list-alt"/>
+        <sidebar-link to="/table-list" name="Calendar" icon="ti-calendar"/>
         <sidebar-link to="/typography" name="Daily Activity" icon="ti-pencil-alt2"/>
 
         
@@ -37,7 +37,9 @@
 </template>
 <style lang="scss">
 .sidebar-wrapper {
-  background-color: #808fce;
+  background-image: linear-gradient(#340088, #1CB5E0);
+  color: #fff;
+  // background-color: #3a0d9b;
 }
 </style>
 <script>
