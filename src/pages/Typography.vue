@@ -75,13 +75,13 @@ export default {
       const todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
     },
+    submit() {
+      console.log("FUCK")
+      this.todos.forEach(element => postTask(element))
+    },
   },
 };
 
-function submit() {
-  console.log("FUCK")
-  this.todos.forEach(element => postTask(element))
-}
 </script>
 
 <style lang="scss">
