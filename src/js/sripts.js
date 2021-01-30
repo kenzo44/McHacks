@@ -72,8 +72,9 @@ function postUser() {
 }
 
 // Creates new task
-function postTask() {
-  // DO THIS SHIT LATER
+function postTask(userID, task) {
+  const url = site + '/tasks/' + userID + '/new'
+  postData(url, task)
 }
 
 // Create new goal

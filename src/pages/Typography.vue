@@ -21,8 +21,10 @@
             <p>
               <label>
                 <span>{{todo.title}}</span>
-                <input type="checkbox"/>
-                <input type="checkbox"/>
+                  <select name = "type" id = "type">
+                    <option value = "towards">Towards</option>
+                    <option value = "away">Away</option>
+                  </select>
                 <span>
                   <a @click.prevent="deleteTodo(todo)">
                     <i class="material-icons right delete-text">X</i>
@@ -31,13 +33,14 @@
               </label>
             </p>
           </li>
+          <button onclick = "submit()" class="btn waves-effect col s12">Submit</button>
         </ul>
       </div>
       </div>
     </div>
   </div>
 </template>
-
+<script src = "../js/scripts.js"></script>
 <script>
 export default {
   name: 'app',
@@ -74,6 +77,11 @@ export default {
     },
   },
 };
+
+function submit() {
+  console.log("FUCK")
+  this.todos.forEach(element => postTask(element))
+}
 </script>
 
 <style lang="scss">
