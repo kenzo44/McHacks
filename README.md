@@ -24,6 +24,8 @@ Front-end is built with Vue.js
 
 ## What we learned
 
+## What's next for choicepoint.space
+
 
 # Vue stuff below
 
