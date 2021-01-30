@@ -19,7 +19,7 @@
         <ul class="collection col">
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
             <p>
-              <label>
+              <label id="list">
                 <span>{{todo.title}}</span>
                 <input type="checkbox"/>
                 <input type="checkbox"/>
@@ -117,6 +117,10 @@ export default {
   color: red;
   font-size: 20px;
   justify-content: right;
+}
+
+#list {
+  justify-content: space-around;
 }
 
 </style>
