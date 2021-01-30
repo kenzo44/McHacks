@@ -9,13 +9,7 @@
         </ul>
       </nav>
       <div class="copyright d-flex flex-wrap">
-<<<<<<< HEAD
-        &copy; Coded with
-        <i class="fa fa-heart heart"></i> by &nbsp;
-        <p style="position: relative; bottom: 3px;">uLeth pals</p>&nbsp;
-=======
         &copy; Developed by Austin, Kenish, Brett, & Matthew
->>>>>>> master
       </div>
     </div>
   </footer>
