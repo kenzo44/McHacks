@@ -15,12 +15,14 @@
         </form>
       </div>
       <div class="row">
-        <ul class="collection col s6 offset-s3">
+        <div class="list">
+        <ul class="collection col">
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
-            <p class="list-item">
+            <p>
               <label>
-                <input type="checkbox" :checked=todo.done @change="todo.done = !todo.done" />
                 <span>{{todo.title}}</span>
+                <input type="checkbox"/>
+                <input type="checkbox"/>
                 <span>
                   <a @click.prevent="deleteTodo(todo)">
                     <i class="material-icons right delete-text">X</i>
@@ -30,6 +32,7 @@
             </p>
           </li>
         </ul>
+      </div>
       </div>
     </div>
   </div>
@@ -104,7 +107,11 @@ export default {
   justify-content: space-between;
 }
 
-
+.list-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .delete-text {
   color: red;
