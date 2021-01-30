@@ -21,22 +21,6 @@
     <!--Charts-->
     <div class="row">
 
-      <!-- <div class="col-12">
-        <chart-card title="Users behavior"
-                    sub-title="24 Hours performance"
-                    :chart-data="usersChart.data"
-                    :chart-options="usersChart.options">
-          <span slot="footer">
-            <i class="ti-reload"></i> Updated 3 minutes ago
-          </span>
-          <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Click
-            <i class="fa fa-circle text-warning"></i> Click Second Time
-          </div>
-        </chart-card>
-      </div> -->
-
       <div class="col-md-6 col-12">
         <chart-card title="Email Statistics"
                     sub-title="Last campaign performance"
@@ -52,19 +36,12 @@
         </chart-card>
       </div>
 
-      <div class="col-md-6 col-12">
-        <chart-card title="2015 Sales"
-                    sub-title="All products including Taxes"
-                    :chart-data="activityChart.data"
-                    :chart-options="activityChart.options">
-          <span slot="footer">
-            <i class="ti-check"></i> Data information certified
-          </span>
-          <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Tesla Model S
-            <i class="fa fa-circle text-warning"></i> BMW 5 Series
-          </div>
-        </chart-card>
+<!-- Calendar -->
+      <div class="caly col-md-6 col-12">
+        <div class="calendar">
+	
+		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
+	</div>
       </div>
 
     </div>
@@ -72,6 +49,8 @@
   </div>
 </template>
 <script>
+import  VSimpleCalendar  from  '@romanran/vue-simple-calendar'
+import '@romanran/vue-simple-calendar/dist/vue-simple-calendar.css'
 import { StatsCard, ChartCard } from "@/components/index";
 import Chartist from 'chartist';
 export default {
@@ -84,13 +63,16 @@ export default {
   },
   components: {
     StatsCard,
-    ChartCard
+    ChartCard,
+    VSimpleCalendar,
   },
   /**
    * Chart data used to render stats, charts. Should be replaced with server data
    */
   data() {
     return {
+      selectedRange: [new Date()],
+			type: 'single',
       statsCards: [
         {
           type: "warning",
@@ -187,16 +169,49 @@ export default {
           height: "245px"
         }
       },
+      
       preferencesChart: {
         data: {
           labels: ["62%", "32%", "6%"],
           series: [62, 32, 6]
         },
         options: {}
-      }
+      },
+      
     };
-  }
+  },
+  methods: {
+		changeValue(value) {
+			this.selectedRange = value
+		},
+	},
 };
 </script>
+
 <style>
+
+.calendar {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  color: #333;
+  font-size: 18px;
+	
+	font-family: 'Muli', "Helvetica", Arial, sans-serif;
+}
+.vcs-clickable {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 574px) {
+.vcs-table__day {
+  height: 50px;
+  width: 50px;
+  padding: -20px;
+}
+}
+
 </style>

@@ -1,10 +1,6 @@
 <template>
-	<div id="app">
-		<div>
-			<button @click="type = 'range'" id='btn'>Range</button>
-			<button @click="type = 'single'" id='btn'>Single</button>
-		</div>
-		<br />
+	<div class="calendar">
+	
 		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
 	</div>
 </template>
@@ -19,7 +15,7 @@ export default {
 	data() {
 		return {
 			selectedRange: [new Date()],
-			type: 'range',
+			type: 'single',
 		}
 	},
 	methods: {
@@ -31,25 +27,19 @@ export default {
 </script>
 
 <style>
-#app {
+.calendar {
   /*display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: #FFFFFF;*/
-  color: #212120;
+  color: #333;
   font-size: 25px;
 	text-align: center;
-	font-family: Arial, Roboto;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Roboto;
 }
-#btn {
-  font-size: 10px;
-}
-
 .vcs-clickable {
-  background-color: #d4f4b7;
-  border: 2px solid white;
-  border-radius: 10px;
-
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 574px) {
