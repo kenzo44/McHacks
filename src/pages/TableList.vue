@@ -1,90 +1,63 @@
 <template>
-    <div class="row">
-      <div class="col-12">
-        <card :title="table1.title" :subTitle="table1.subTitle">
-          <div slot="raw-content" class="table-responsive">
-            <paper-table :data="table1.data" :columns="table1.columns">
-
-            </paper-table>
-          </div>
-        </card>
-      </div>
-
-      <div class="col-12">
-        <card class="card-plain">
-          <div class="table-full-width table-responsive">
-            <paper-table type="hover" :title="table2.title" :sub-title="table2.subTitle" :data="table2.data"
-                         :columns="table2.columns">
-
-            </paper-table>
-          </div>
-        </card>
-      </div>
-
-    </div>
+	<div id="app">
+		<div>
+			<button @click="type = 'range'" id='btn'>Range</button>
+			<button @click="type = 'single'" id='btn'>Single</button>
+		</div>
+		<br />
+		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
+	</div>
 </template>
-<script>
-import { PaperTable } from "@/components";
-const tableColumns = ["Id", "Name", "Salary", "Country", "City"];
-const tableData = [
-  {
-    id: 1,
-    name: "Dakota Rice",
-    salary: "$36.738",
-    country: "Niger",
-    city: "Oud-Turnhout"
-  },
-  {
-    id: 2,
-    name: "Minerva Hooper",
-    salary: "$23,789",
-    country: "Curaçao",
-    city: "Sinaai-Waas"
-  },
-  {
-    id: 3,
-    name: "Sage Rodriguez",
-    salary: "$56,142",
-    country: "Netherlands",
-    city: "Baileux"
-  },
-  {
-    id: 4,
-    name: "Philip Chaney",
-    salary: "$38,735",
-    country: "Korea, South",
-    city: "Overland Park"
-  },
-  {
-    id: 5,
-    name: "Doris Greene",
-    salary: "$63,542",
-    country: "Malawi",
-    city: "Feldkirchen in Kärnten"
-  }
-];
 
+<script>
+import  VSimpleCalendar  from  '@romanran/vue-simple-calendar'
+import '@romanran/vue-simple-calendar/dist/vue-simple-calendar.css'
 export default {
-  components: {
-    PaperTable
-  },
-  data() {
-    return {
-      table1: {
-        title: "Stripped Table",
-        subTitle: "Here is a subtitle for this table",
-        columns: [...tableColumns],
-        data: [...tableData]
-      },
-      table2: {
-        title: "Table on Plain Background",
-        subTitle: "Here is a subtitle for this table",
-        columns: [...tableColumns],
-        data: [...tableData]
-      }
-    };
-  }
-};
+	components: {
+		VSimpleCalendar,
+	},
+	data() {
+		return {
+			selectedRange: [new Date()],
+			type: 'range',
+		}
+	},
+	methods: {
+		changeValue(value) {
+			this.selectedRange = value
+		},
+	},
+}
 </script>
+
 <style>
+#app {
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FFFFFF;*/
+  color: #212120;
+  font-size: 25px;
+	text-align: center;
+	font-family: Arial, Roboto;
+}
+#btn {
+  font-size: 10px;
+}
+
+.vcs-clickable {
+  background-color: #d4f4b7;
+  border: 2px solid white;
+  border-radius: 10px;
+
+}
+
+@media only screen and (max-width: 574px) {
+.vcs-table__day {
+  height: 50px;
+  width: 50px;
+  padding: -20px;
+}
+}
+
 </style>
