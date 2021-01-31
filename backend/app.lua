@@ -14,8 +14,4 @@ for i = 1, #endpoints do
   endpoints[i].use(app)
 end
 
-function app:handle_error(err, trace)
-  return {status = 500, json = {error = err, trace = trace}}
-end
-
 return app
