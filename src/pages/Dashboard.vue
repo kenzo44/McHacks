@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid masonry">
     <!--Stats cards-->
     <div class="row">
       <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
@@ -220,7 +220,7 @@ export default {
   display: block;
   padding: 25px;
   /* display: flex; */
-  
+
   background-color: #FFFFFF;
   color: #333;
   font-size: 18px;
