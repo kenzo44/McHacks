@@ -95,8 +95,9 @@ export default {
         }
         fuck.postTask(69, data)
         })
-
-      //this.todos.forEach(element => fuck.postTask(69, element))
+      while(this.todos.length != 0) {
+        this.deleteTodo(0)
+      }
     },
   },
 };
@@ -146,7 +147,7 @@ export default {
   border-radius: 10;
   color: #fff;
   border: none;
-  background-color: #1CB5E0;  
+  background-color: #1CB5E0;
   text-align: center;
 }
 
