@@ -58,7 +58,7 @@ function module.Updated()
 end
 
 function module.UnknownError(code)
-  return module.All {status = 500, json = {"error":"Unknown Error with code " .. tostring(code) .. "."}}
+  return module.All {status = 500, json = {"error" = "Unknown Error with code " .. tostring(code) .. "."}}
 end
 
 return module
