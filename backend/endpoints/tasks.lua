@@ -51,9 +51,6 @@ function module.use(app)
       }
       local task = Tasks:create(t)
 
-      print("DATA OUT")
-      print("ID: ", type(task.id))
-
       return Builder.Created({taskid = task.id}, { Location = self:url_for("task", {userid = self.params.userid, taskid = task.id})})
     end)}
   ))

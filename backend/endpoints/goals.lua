@@ -21,7 +21,6 @@ local NOT_IMPLEMENTED = {status = 501}
 --[[ MODULE ]]
 local module = {}
 
-
 function module.use(app)
   -- [[ User Goals ]]
 
@@ -36,7 +35,7 @@ function module.use(app)
   end)
 
   -- update or delete goal
-  app:match("/goals/:userid/:goalid", respond_to({
+  app:match("/goals/:userid/:goalid", RESPOND_TO({
     PATCH = function(self)
       return NOT_IMPLEMENTED
     end,

@@ -27,7 +27,7 @@ function module.use(app)
   )
 
   -- [[ Base User Registration ]]
-  local Users = Model:extend("users")
+  local Users = MODEL:extend("users")
 
   -- determine if a username exists
   app:get("/users/find/:username", function(self)
