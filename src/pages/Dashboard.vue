@@ -212,6 +212,12 @@ export default {
   padding-right: 10px;
 }
 
+.vcs-table__day {
+  height: 50px;
+  width: 50px;
+}
+
+
 @media only screen and (max-width: 574px) {
 .vcs-table__day {
   height: 50px;

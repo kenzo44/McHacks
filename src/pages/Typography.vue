@@ -115,7 +115,9 @@ export default {
 
 }
 
-input
+.col {
+  justify-content: left;
+}
 
 .collection-item {
   flex-direction: row;
