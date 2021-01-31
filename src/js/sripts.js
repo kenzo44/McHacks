@@ -9,37 +9,37 @@ var site = 'http://localhost:8080'
 * Get requests *
 ****************/
 // Returns a user by ID
-function getUser(id) {
+export function getUser(id) {
  var url = site + '/users/'
  getData(url, id)
 }
 
 // Returns user days
-function getDay(id) {
+export function getDay(id) {
   var url = site + '/days/'
   getData(url, id)
 }
 
 // Returns a specific day
-function getDayStamp(id, day) {
+export function getDayStamp(id, day) {
   var url = site + '/day/' + id + '/'
   getData(url, day)
 }
 
 // Returns list of tasks
-function getTasks(id) {
+export function getTasks(id) {
   var url = site + '/tasks/'
   getData(url, id)
 }
 
 // Returns list of goals
-function getGoals(id) {
+export function getGoals(id) {
   var url = site + '/goals/'
   getData(url, id)
 }
 
 // Returns a resource
-function getRes(name) {
+export function getRes(name) {
   var url = site + '/resources/'
   getData(url, name)
 }
@@ -47,19 +47,19 @@ function getRes(name) {
 * Patch requests *
 *******************/
 // Updates a user
-function patchUser(id) {
+export function patchUser(id) {
   var url = site + '/users/'
   patchData(url, id)
 }
 
 // Updates a task
-function patchTask(userID, taskID) {
-  var url = site + '/tasks/' + userID '/'
+export function patchTask(userID, taskID) {
+  var url = site + '/tasks/' + userID + '/'
   patchData(url, taskID)
 }
 
 // Updates a goal
-function patchGoal(userID, goalID) {
+export function patchGoal(userID, goalID) {
   var url = site + '/goals/' + userID + '/'
   patchData(url, goalID)
 }
@@ -67,25 +67,25 @@ function patchGoal(userID, goalID) {
 * Post requests *
 *******************/
 // Creates new user
-function postUser() {
+export function postUser() {
 // DO THIS SHIT LATER
 }
 
 // Creates new task
-function postTask(userID, task) {
+export function postTask(userID, task) {
   const url = site + '/tasks/' + userID + '/new'
   postData(url, task)
 }
 
 // Create new goal
-function postGoal() {
+export function postGoal() {
   // DO THIS SHIT LATER
 }
 /*******************
 * Delete requests *
 *******************/
 // Deletes a user
-function powerWordKill(id) {
+export function powerWordKill(id) {
   var url = site + '/user/' + id
   delData(url)
   .catch(rejected => {
@@ -95,7 +95,7 @@ function powerWordKill(id) {
 }
 
 // Deletes a task
-function delTask(userID, taskID) {
+export function delTask(userID, taskID) {
   var url = site + '/users/' + userID + '/tasks/' + taskID
   delData(url)
   .catch(rejected => {
@@ -105,11 +105,68 @@ function delTask(userID, taskID) {
 }
 
 // Deletes a goal
-function delGoal(userID, goalID) {
+export function delGoal(userID, goalID) {
   var url = site + '/users/' + userID + 'goals/' + goalID
   delData(url)
   .catch(rejected => {
     alert("delGOal failed")
     console.log(rejected)
+  })
+}
+
+/*******************
+* Helper Functions *
+*******************/
+
+// Used for post request
+async function postData(url = '', data) {
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(data)
+  })
+  return await response.json()
+}
+
+// Used for get request
+async function getData(url = '', data) {
+  // Gets the data back
+  fetch(url + data)
+  .then((resp) => resp.json())
+  .then(data => {
+    // Handle data feedback here
+    return(data["result"])
+  })
+  // Display error here
+  .catch(rejected => {
+    // Handle error here
+    console.log("Error: " + rejected)
+    alert("Could not get " + data)
+  })
+}
+
+// Used for put request
+async function putData(url = '', data) {
+  const response = await fetch(url, {
+    method: 'PUT',
+    mode: 'cors',
+    body: JSON.stringify(data)
+  })
+}
+
+// Used for delete request
+async function delData(url = '') {
+    fetch(url, {
+      method: 'DELETE',
+      mode: 'cors'
+    })
+}
+
+// Used for patch request
+async function patchData(url = '', data) {
+  const response = await fetch(url, {
+    method: 'PATCH',
+    mode: 'cors',
+    body: JSON.stringify(data)
   })
 }

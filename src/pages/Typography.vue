@@ -40,8 +40,8 @@
     </div>
   </div>
 </template>
-<script src = "../js/scripts.js"></script>
 <script>
+import * as fuck from '../js/sripts.js'
 export default {
   name: 'app',
   data() {
@@ -78,13 +78,21 @@ export default {
     },
     submit() {
       console.log("FUCK")
-      this.todos.forEach(element => postTask(element))
+      this.todos.forEach(element =>{
+        console.log(element.title)
+        var data = {
+          score: '0',
+          description: element.title,
+          datestamp: '20110911'
+        }
+        fuck.postTask(69, data)
+        })
+
+      //this.todos.forEach(element => fuck.postTask(69, element))
     },
   },
 };
-
 </script>
-
 <style lang="scss">
 
 
