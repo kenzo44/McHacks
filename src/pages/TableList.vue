@@ -11,7 +11,7 @@
       <ul class="myLists">
         <li>Compassion/self-compassion: to act kindly toward myself and others in pain.</li>
         <li>Supportiveness: to be supportive, helpful, and available to myself and others.</li>
-        <li>List Item 3</li>
+        <li>Fun and Humour: to be fun-loving; to seek, create, and engage in fun-filled activities.</li>
       </ul>
     </div>
     </div>
@@ -20,10 +20,10 @@
       <h3>Goals</h3>
       <div class="listWrap">
       <ul class="myLists">
-        <li>List Item 1</li>
-        <li>List Item 2</li>
-        <li>List Item 3</li>
-        <li>List Item 3</li>
+        <li>To practice mindfullness daily on choicepoint.space and log my behaviour activities.</li>
+        <li>Get 30 minutes of physical activity in 4 times a week.</li>
+        <li>To earn an A in Math class.</li>
+        <li>To be more present and engaging with family members by calling them once a week.</li>
       </ul>
     </div>
     </div>
