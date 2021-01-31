@@ -57,7 +57,13 @@
     height="500"
     src="https://console.dialogflow.com/api-client/demo/embedded/495a8448-bba9-4575-8ba4-48a687248161">
 </iframe>
+
 	</div>
+  <br>
+<br>
+Kippy is built with Dialogflow and Google Cloud Functions<br><br>
+- Keywords from the chat are saved to a firebase db<br>
+- This helps build a psychological profile of the individual
       </div>
 
     </div>
