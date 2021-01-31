@@ -127,12 +127,12 @@ export default {
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
 .list-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-=======
+}
+
 .collection {
   justify-content: left;
   line-height: 20px;
@@ -149,7 +149,6 @@ export default {
   flex-direction: row;
   justify-content: space-around;
 
->>>>>>> 286440fdc28d8c7264c047ab8d003f03835fadc8
 }
 
 label {

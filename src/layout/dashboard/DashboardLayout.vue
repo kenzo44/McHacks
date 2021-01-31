@@ -5,7 +5,7 @@
         <sidebar-link to="/dashboard" name="Dashboard" icon="ti-home"/>
         <sidebar-link to="/typography" name="Daily Activity" icon="ti-check-box"/>
         <sidebar-link to="/stats" name="User Profile" icon="ti-user"/>
-        <sidebar-link to="/maps" name="Goals & Values" icon="ti-agenda"/>
+        <sidebar-link to="/table-list" name="Goals & Values" icon="ti-agenda"/>
       </template>
       <mobile-menu>
         <drop-down class="nav-item"

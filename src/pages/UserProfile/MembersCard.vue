@@ -32,23 +32,13 @@
 export default {
   data() {
     return {
-      title: "Team members",
+      title: "Counselor",
       members: [
         {
-          image: require("@/assets/img/faces/face-0.jpg"),
-          name: "Dj Khaled",
-          status: "Offline"
-        },
-        {
           image: require("@/assets/img/faces/face-1.jpg"),
-          name: "Creative Tim",
+          name: "Ima Gudtherapist",
           status: "Available"
         },
-        {
-          image: require("@/assets/img/faces/face-1.jpg"),
-          name: "Flume",
-          status: "Busy"
-        }
       ]
     };
   },

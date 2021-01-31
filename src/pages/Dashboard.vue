@@ -78,7 +78,7 @@ export default {
           type: "warning",
           icon: "ti-arrow-top-right",
           title: "Toward Moves",
-          value: "68",
+          value: "63",
           footerText: "This Week",
           footerIcon: "ti-reload"
         },
@@ -213,7 +213,7 @@ export default {
 }
 
 .vcs-table__day {
-  height: 50px;
+  height: 5*0px;
   width: 50px;
 }
 

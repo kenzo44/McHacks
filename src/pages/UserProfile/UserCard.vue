@@ -13,15 +13,11 @@
           </a>
         </h4>
       </div>
-      <p class="description text-center">
-        "I like the way you work it
-        <br> No diggity
-        <br> I wanna bag it up"
-      </p>
+
     </div>
     <hr>
     <div class="text-center">
-      <div class="row">
+      <div class="row" id="this-row">
         <div v-for="(info, index) in details" :key="index" :class="getClasses(index)">
           <h5>{{info.title}}
             <br>
@@ -39,16 +35,13 @@ export default {
       details: [
         {
           title: "12",
-          subTitle: "Files"
+          subTitle: "Sessions Attended"
         },
         {
-          title: "2GB",
-          subTitle: "Used"
+          title: "100",
+          subTitle: "Activities Entered"
         },
-        {
-          title: "24,6$",
-          subTitle: "Spent"
-        }
+
       ]
     };
   },
@@ -67,4 +60,9 @@ export default {
 };
 </script>
 <style>
+#this-row {
+  display: flex;
+  justify-content: space-around;
+}
+
 </style>
