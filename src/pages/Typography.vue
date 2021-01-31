@@ -33,8 +33,8 @@
               </label>
             </p>
           </li>
-          <button @click.prevent="submit()" class="btn waves-effect col s12">Submit</button>
-        </ul>
+          </ul>
+        <button @click.prevent="submit()" class="btn waves-effect col s12">Submit</button>
       </div>
       </div>
     </div>
