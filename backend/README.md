@@ -19,7 +19,7 @@ This is built for a PostGres database. There are specific requirements for the
 database. These requirements will be listed at a later time (or displayed with
 a database dump instead).
 
-Once you have the database set up, you can simple run `lapis server dev`. This
+Once you have the database set up, you can simply run `lapis server dev`. This
 will start the backend.
 
 ## Endpoints
