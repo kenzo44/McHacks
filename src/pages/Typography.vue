@@ -1,6 +1,13 @@
 <template>
   <div class="app">
     <div class="container">
+      <div class="text-div">
+      <p class="some-text">Towards Moves – Actions that bring us closer to the person we truly want to be.
+        These are actions that bring us closer to the people and experiences that matter most to us. </p>
+      <p class="some-text">
+        Away Moves – Actions that pull us off-course or further away from the person we truly want to be in a situation.
+        In other words, doing things that will make a situation worse.</p>
+      </div>
       <div class="row header">
         <h1 class="col s6 offset-s3 center-align teal-text">What did you do today?</h1>
       </div>
@@ -156,6 +163,12 @@ export default {
   color: #fff;
   // background-color: #3a0d9b;
 }
+
+.text-div {
+  margin-top: 50px;
+  margin-bottom: -60px;
+}
+
 
 label {
   width: 100%;
