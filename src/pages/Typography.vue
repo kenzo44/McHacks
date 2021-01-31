@@ -3,6 +3,7 @@
   <div class="app">
     <div class="container">
       <div class="text-div">
+      <h3>Daily Behaviors Activity Tracker</h3>
       <p class="some-text">Towards Moves – Actions that bring us closer to the person we truly want to be.
         These are actions that bring us closer to the people and experiences that matter most to us. </p>
       <p class="some-text">
@@ -119,7 +120,7 @@ export default {
 
 
 .header{
-  margin-top: 100px;
+  margin-top: 75px;
 }
 .inputarea{
   width: 60%;
@@ -149,6 +150,7 @@ export default {
   background-color: #340088;
   color: #fff;
   border: none;
+  border-radius: 5px;
 }
 .texty{
   color: #333;
@@ -161,11 +163,12 @@ export default {
   font-size: 15px;
   line-height: 24px;
   margin-top: -3px;
-  border-radius: 10;
+  border-radius: 5px;
   color: #fff;
   border: none;
-  background-color: #1CB5E0;  
+  background-color: #1CB5E0;
   text-align: center;
+
 }
 
 .col {
@@ -230,8 +233,10 @@ export default {
 .btn {
   background-image: linear-gradient(#340088, #1CB5E0);
   color: #fff;
+  border-radius: 5px;
   // background-color: #3a0d9b;
 }
+
 
 label {
   width: 100%;
@@ -242,7 +247,6 @@ label {
   flex-grow: 1;
 }
 .text-div {
-  margin-top: 50px;
   margin-bottom: -60px;
 }
 
