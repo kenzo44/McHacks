@@ -1,21 +1,25 @@
-local module = {}
+--[[
 
+]]
+
+--[[ LAPIS MODULES ]]
 local db = require "lapis.db"
 local Application = require("lapis.application")
-local respond_to, json_params = Application.respond_to, Application.json_params
 local Model = require("lapis.db.model").Model
+
+--[[ ETC MODULES ]]
+local ParamUtil = require "ParamUtil"
+local Builder = require "ResponseBuilder"
+
+--[[ GLOBAL LAPIS CONSTANTS ]]
+local RESPOND_TO = APPLICATION.respond_to
+local JSON_PARAMS = APPLICATION.json_params
+
+-- [[ GLOBAL CONSTANTS ]]
 local NOT_IMPLEMENTED = {status = 501}
 
-local Builder = require "ResponseBuilder"
-local ParamUtil = require "ParamUtil"
-
---[[ngx.timer.at(0, function()
-  print("querying")
-  local x = db.query("select *")
-  print("E")
-  print(x)
-  print("Done query")
-end)]]
+--[[ MODULE ]]
+local module = {}
 
 function module.use(app)
   local userParams = ParamUtil.Flip(
@@ -25,9 +29,18 @@ function module.use(app)
   -- [[ Base User Registration ]]
   local Users = Model:extend("users")
 
-  app:get("/users/find")
+  -- determine if a username exists
+  app:get("/users/find/:username", function(self)
+    local user = Users:find({username = self.params.username})
+    if user then
+      return Builder.OK({userid = user.id}, {Location = self.url_for("user", {userid = user.id})})
+    end
+    return Builder.NotFound()
+  end)
+
+
   -- GET user and UPDATE user
-  app:match("user", "/users/:userid", respond_to({
+  app:match("user", "/users/:userid", RESPOND_TO({
     GET = function(self)
       -- Make sure the userid is a number
       local userid = tonumber(self.params.userid)
@@ -50,7 +63,7 @@ function module.use(app)
 
       return Builder.OK(data)
     end,
-    PATCH = json_params(function(self)
+    PATCH = JSON_PARAMS(function(self)
       -- Ensure only the "allowed" variables are set.
       local ok, key = ParamUtil.SoftCompare(self.params, userParams)
       if not ok then
@@ -80,7 +93,7 @@ function module.use(app)
 
       return Builder.Updated()
     end),
-    DELETE = json_params(function(self)
+    DELETE = JSON_PARAMS(function(self)
       -- Make sure the userid is a number
       local userid = tonumber(self.params.userid)
       if not userid then
@@ -100,10 +113,27 @@ function module.use(app)
   })) -- self.params.userid, GET, PATCH
 
   -- Create user
-  app:post("/users/new", function(self)
-    local ok, key = ParamUtil.Compare()
-    return NOT_IMPLEMENTED
-  end)
+  app:post("/users/new", JSON_PARAMS(function(self)
+    local ok, key = ParamUtil.SoftCompare(self.params, userParams)
+    if not ok then
+      return Builder.BadRequest(key)
+    end
+
+    local t = {
+      username = self.params.username,
+      email = self.params.email,
+      address = self.params.address,
+      bio = self.params.bio
+    }
+
+    local user = Users:create(self.params)
+
+    if user then
+      return Builder.Created({userid = user.id}, {Location = self.url_for("user", {userid = user.id})})
+    end
+
+    return Builder.UnknownError(1)
+  end))
 
 end
 
