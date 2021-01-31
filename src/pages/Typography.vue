@@ -81,9 +81,10 @@ export default {
       this.todos.forEach(element =>{
         console.log(element.title)
         var data = {
-          score: '0',
-          description: element.title,
-          datestamp: '20110911'
+          //score: 2,
+          //yoserid: 69,
+          description: element.title
+          //datestamp: '20110911'
         }
         fuck.postTask(69, data)
         })
@@ -125,31 +126,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-<<<<<<< HEAD
-.list-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-=======
-.collection {
-  justify-content: left;
-  line-height: 20px;
-  padding: 10px;
-  flex-direction: column;
-
-}
-
-.col {
-  justify-content: left;
-}
-
-.collection-item {
-  flex-direction: row;
-  justify-content: space-around;
-
->>>>>>> 286440fdc28d8c7264c047ab8d003f03835fadc8
 }
 
 label {
