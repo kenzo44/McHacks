@@ -115,6 +115,8 @@ export default {
 
 }
 
+input
+
 .collection-item {
   flex-direction: row;
   justify-content: space-around;
