@@ -135,6 +135,7 @@ export default {
   background-color: #340088;
   color: #fff;
   border: none;
+  border-radius: 5px;
 }
 
 .nice-btns {
@@ -143,11 +144,12 @@ export default {
   font-size: 15px;
   line-height: 24px;
   margin-top: -3px;
-  border-radius: 10;
+  border-radius: 5px;
   color: #fff;
   border: none;
-  background-color: #1CB5E0;  
+  background-color: #1CB5E0;
   text-align: center;
+
 }
 
 .col {
@@ -210,6 +212,7 @@ export default {
 .btn {
   background-image: linear-gradient(#340088, #1CB5E0);
   color: #fff;
+  border-radius: 5px;
   // background-color: #3a0d9b;
 }
 
