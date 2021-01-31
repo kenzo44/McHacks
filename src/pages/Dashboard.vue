@@ -22,16 +22,16 @@
     <div class="row">
 
       <div class="col-md-6 col-12">
-        <chart-card title="Email Statistics"
-                    sub-title="Last campaign performance"
+        <chart-card title="Total Behavior Activities"
+                    sub-title=""
                     :chart-data="preferencesChart.data"
                     chart-type="Pie">
           <span slot="footer">
-            <i class="ti-timer"></i> Campaign set 2 days ago</span>
+            <i class="ti-timer"></i> Last updated today</span>
           <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Bounce
-            <i class="fa fa-circle text-warning"></i> Unsubscribe
+            <i class="fa fa-circle text-info"></i> Toward Moves
+
+            <i class="fa fa-circle text-warning"></i> Away Moves
           </div>
         </chart-card>
       </div>
@@ -39,7 +39,7 @@
 <!-- Calendar -->
       <div class="caly col-md-6 col-12">
         <div class="calendar">
-	
+
 		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
 	</div>
       </div>
@@ -76,35 +76,28 @@ export default {
       statsCards: [
         {
           type: "warning",
-          icon: "ti-server",
-          title: "Capacity",
-          value: "105GB",
-          footerText: "Updated now",
+          icon: "ti-arrow-top-right",
+          title: "Toward Moves",
+          value: "63",
+          footerText: "This Week",
           footerIcon: "ti-reload"
         },
         {
           type: "success",
-          icon: "ti-wallet",
-          title: "Revenue",
-          value: "$1,345",
-          footerText: "Last day",
+          icon: "ti-clipboard",
+          title: "Behavior Activities",
+          value: "4",
+          footerText: "Entered Today",
           footerIcon: "ti-calendar"
         },
-        {
-          type: "danger",
-          icon: "ti-pulse",
-          title: "Errors",
-          value: "23",
-          footerText: "In the last hour",
-          footerIcon: "ti-timer"
-        },
+
         {
           type: "info",
-          icon: "ti-twitter-alt",
-          title: "Followers",
-          value: "+45",
-          footerText: "Updated now",
-          footerIcon: "ti-reload"
+          icon: "ti-time",
+          title: "Upcoming Session",
+          value: "6pm Wed",
+          footerText: "See Schedule",
+          footerIcon: "ti-calendar"
         }
       ],
       usersChart: {
@@ -169,15 +162,15 @@ export default {
           height: "245px"
         }
       },
-      
+
       preferencesChart: {
         data: {
-          labels: ["62%", "32%", "6%"],
-          series: [62, 32, 6]
-        },
+          labels: ["63%", "27%"],
+          series: [63,27],
+          },
         options: {}
       },
-      
+
     };
   },
   methods: {
@@ -198,13 +191,32 @@ export default {
   background-color: #FFFFFF;
   color: #333;
   font-size: 18px;
-	
+
 	font-family: 'Muli', "Helvetica", Arial, sans-serif;
 }
 .vcs-clickable {
   background-color: #fff;
   border-radius: 10px;
 }
+
+.ti-arrow-top-right {
+  color: green;
+}
+
+.ti-clipboard {
+  color: #ba8a10;
+}
+
+.numbers p {
+  width: 150px;
+  padding-right: 10px;
+}
+
+.vcs-table__day {
+  height: 5*0px;
+  width: 50px;
+}
+
 
 @media only screen and (max-width: 574px) {
 .vcs-table__day {

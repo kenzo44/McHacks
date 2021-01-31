@@ -3,14 +3,7 @@
     <div>
       <form @submit.prevent>
         <div class="row">
-          <div class="col-md-5">
-            <fg-input type="text"
-                      label="Company"
-                      :disabled="true"
-                      placeholder="Paper dashboard"
-                      v-model="user.company">
-            </fg-input>
-          </div>
+
           <div class="col-md-3">
 
             <fg-input type="text"
@@ -21,7 +14,7 @@
           </div>
           <div class="col-md-4">
             <fg-input type="email"
-                      label="Username"
+                      label="Email"
                       placeholder="Email"
                       v-model="user.email">
             </fg-input>
@@ -73,7 +66,7 @@
           <div class="col-md-4">
             <fg-input type="number"
                       label="Postal Code"
-                      placeholder="ZIP Code"
+                      placeholder="Postal Code"
                       v-model="user.postalCode">
             </fg-input>
           </div>
@@ -108,15 +101,16 @@ export default {
   data() {
     return {
       user: {
-        company: "Paper Dashboard",
+
         username: "michael23",
         email: "",
-        firstName: "Chet",
+        firstName: "Mister",
         lastName: "Faker",
-        address: "Melbourne, Australia",
-        city: "Melbourne",
-        postalCode: "",
-        aboutMe: `We must accept finite disappointment, but hold on to infinite hope.`
+        address: "Montreal, Quebec",
+        city: "Montreal",
+        country: "Canada",
+        postalCode: "T1M 0B4",
+        aboutMe: `Working to be more mindful.`
       }
     };
   },

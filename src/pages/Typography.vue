@@ -15,12 +15,16 @@
         </form>
       </div>
       <div class="row">
-        <ul class="collection col s6 offset-s3">
+        <div class="list">
+        <ul class="collection col">
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
-            <p class="list-item">
+            <p>
               <label>
-                <input type="checkbox" :checked=todo.done @change="todo.done = !todo.done" />
                 <span>{{todo.title}}</span>
+                  <select name = "type" id = "type">
+                    <option value = "towards">Towards</option>
+                    <option value = "away">Away</option>
+                  </select>
                 <span>
                   <a @click.prevent="deleteTodo(todo)">
                     <i class="material-icons right delete-text">X</i>
@@ -29,13 +33,15 @@
               </label>
             </p>
           </li>
-        </ul>
+          </ul>
+        <button @click.prevent="submit()" class="btn waves-effect col s12">Submit</button>
+      </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
+import * as fuck from '../js/sripts.js'
 export default {
   name: 'app',
   data() {
@@ -66,13 +72,27 @@ export default {
       this.newTodo = '';
     },
     deleteTodo(todo) {
+      console.log('fuck')
       const todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
+    },
+    submit() {
+      console.log("FUCK")
+      this.todos.forEach(element =>{
+        console.log(element.title)
+        var data = {
+          score: '0',
+          description: element.title,
+          datestamp: '20110911'
+        }
+        fuck.postTask(69, data)
+        })
+
+      //this.todos.forEach(element => fuck.postTask(69, element))
     },
   },
 };
 </script>
-
 <style lang="scss">
 
 
@@ -87,29 +107,63 @@ export default {
 }
 
 .input-field {
-  flex-grow: 1;
-}
-
-.btn {
-  display: flex;
-  flex-grow: none;
+  flex-grow: 8;
 }
 
 .inputarea {
-  width: 80%;
+  width: 90%;
+
 }
-
-.collection {
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
 
 .delete-text {
   color: red;
   font-size: 20px;
   justify-content: right;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.collection {
+  justify-content: left;
+  line-height: 20px;
+  padding: 10px;
+  flex-direction: column;
+
+}
+
+.col {
+  justify-content: left;
+}
+
+.collection-item {
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.btn {
+  background-image: linear-gradient(#340088, #1CB5E0);
+  color: #fff;
+  // background-color: #3a0d9b;
+}
+
+label {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content {
+  flex-grow: 1;
 }
 
 </style>

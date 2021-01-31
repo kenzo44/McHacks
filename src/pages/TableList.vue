@@ -1,53 +1,39 @@
 <template>
-	<div class="calendar">
-	
-		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
+	<div>
+    <h1>Goals and Values</h1>
+    <p>"Goals are things that you are aiming for in the future: things you want to get, have, or achieve. In contrast,
+      values are how you want to behave right now and on an ongoing basis for the rest of your life, and how you want to
+       behave every step of the way toward achieving your goals; whether you achieve them or not."</p>
+
+    <div class="Values">
+      <h3>Values</h3>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ul>
+    </div>
+
+    <div class="goals">
+      <h3>Goals</h3>
+      <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ul>
+    </div>
 	</div>
+
 </template>
 
 <script>
-import  VSimpleCalendar  from  '@romanran/vue-simple-calendar'
-import '@romanran/vue-simple-calendar/dist/vue-simple-calendar.css'
+
 export default {
-	components: {
-		VSimpleCalendar,
-	},
-	data() {
-		return {
-			selectedRange: [new Date()],
-			type: 'single',
-		}
-	},
-	methods: {
-		changeValue(value) {
-			this.selectedRange = value
-		},
-	},
+
 }
 </script>
 
 <style>
-.calendar {
-  /*display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: #FFFFFF;*/
-  color: #333;
-  font-size: 25px;
-	text-align: center;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Roboto;
-}
-.vcs-clickable {
-  background-color: #fff;
-  border-radius: 5px;
-}
 
-@media only screen and (max-width: 574px) {
-.vcs-table__day {
-  height: 50px;
-  width: 50px;
-  padding: -20px;
-}
-}
 
 </style>
