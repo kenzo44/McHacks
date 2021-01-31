@@ -39,8 +39,24 @@
 <!-- Calendar -->
       <div class="caly col-md-6 col-12">
         <div class="calendar">
+          Day at a glance...<br><br>
 
 		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
+	</div>
+      </div>
+
+    </div>
+
+    <!-- chat -->
+      <div class="caly col-md-6 col-12">
+        <div class="chat-box">
+          Share your progress with Kippy :)<br><br>
+		<iframe
+    allow="microphone;"
+    width="450"
+    height="500"
+    src="https://console.dialogflow.com/api-client/demo/embedded/495a8448-bba9-4575-8ba4-48a687248161">
+</iframe>
 	</div>
       </div>
 
@@ -165,8 +181,8 @@ export default {
 
       preferencesChart: {
         data: {
-          labels: ["63%", "27%"],
-          series: [63,27],
+          labels: ["27%", "63%"],
+          series: [27,63],
           },
         options: {}
       },
@@ -191,7 +207,18 @@ export default {
   background-color: #FFFFFF;
   color: #333;
   font-size: 18px;
-
+  text-align: center;
+	font-family: 'Muli', "Helvetica", Arial, sans-serif;
+}
+.chat-box{
+  display: block;
+  padding: 25px;
+  /* display: flex; */
+  
+  background-color: #FFFFFF;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
 	font-family: 'Muli', "Helvetica", Arial, sans-serif;
 }
 .vcs-clickable {
