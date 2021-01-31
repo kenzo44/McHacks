@@ -22,8 +22,19 @@ local NOT_IMPLEMENTED = {status = 501}
 local module = {}
 
 function module.use(app)
+  local Resources = MODEL:extend("resources")
+
   app:get("/resources/:resourcename", function(self)
-    return NOT_IMPLEMENTED
+    local resource = Resources:find({description = self.params.resourcename})
+    if resource then
+      local info = {
+        description = resource.description,
+        contactType = resource.contact_type,
+        contact = resource.contact
+      }
+      return Builder.OK(info)
+    end
+    return Builder.NotFound()
   end)
 end
 
