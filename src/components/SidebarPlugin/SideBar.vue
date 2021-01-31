@@ -47,7 +47,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Choice Point"
+      default: "The Choice Point"
     },
     backgroundColor: {
       type: String,

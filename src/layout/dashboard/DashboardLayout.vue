@@ -2,9 +2,9 @@
   <div class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel"/>
+        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-home"/>
+        <sidebar-link to="/typography" name="Daily Activity" icon="ti-check-box"/>
         <sidebar-link to="/stats" name="User Profile" icon="ti-user"/>
-        <sidebar-link to="/typography" name="Daily Activity" icon="ti-pencil-alt2"/>
       </template>
       <mobile-menu>
         <drop-down class="nav-item"
