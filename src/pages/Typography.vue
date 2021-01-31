@@ -1,4 +1,5 @@
 <template>
+<card>
   <div class="app">
     <div class="container">
       <div class="text-div">
@@ -20,13 +21,13 @@
           </div>
         </form>
       </div>
-      <div class="row">
+      <div class="row" style="color: #333;">
         <div class="list">
         <ul class="collection col">
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
             <p>
               <label>
-                <span>{{todo.title}} </span>
+                <span class="texty">{{todo.title}} </span>
                   <select name = "type" id = "type">
                     <option value = "towards">Towards</option>
                     <option value = "away">Away</option>
@@ -47,6 +48,7 @@
       </div>
     </div>
   </div>
+  </card>
 </template>
 <script>
 import * as fuck from '../js/sripts.js'
@@ -93,10 +95,22 @@ export default {
           description: element.title,
           datestamp: '20110911'
         }
-        fuck.postTask(69, data)
+      fuck.postTask(69, data)
         })
-
-      //this.todos.forEach(element => fuck.postTask(69, element))
+      if(this.todos.length == 0 ) {
+        this.$notify({
+          group: 'foo',
+          title: 'Nothing to upload',
+        })
+      } else {
+        while(this.todos.length != 0) {
+          this.deleteTodo(0)
+        }
+        this.$notify({
+          group: 'foo',
+          title: 'Successfully uploaded to DB',
+        })
+      }
     },
   },
 };
@@ -136,7 +150,11 @@ export default {
   color: #fff;
   border: none;
 }
-
+.texty{
+  color: #333;
+  font-size: 18px;
+  padding: 5px;
+}
 .nice-btns {
   width: 9em;
   height: 4.5em;
@@ -166,9 +184,10 @@ export default {
 }
 
 .delete-text {
+  position: relative;
   color: red;
-  font-size: 20px;
-  justify-content: right;
+  font-size: 23px !important;
+  float: right;
 }
 
 .main-panel {
@@ -193,6 +212,7 @@ export default {
 .collection li{
   padding: 10px;
   background-color: #fff;
+  color: #333;
   margin: 10px 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
