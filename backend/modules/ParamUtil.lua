@@ -16,11 +16,10 @@ end
 function module.Compare(t1, t2)
   local c1, k1 = _compareImpl(t1, t2)
   local c2, k2 = _compareImpl(t2, t1)
-  if c1 and c2 then print("COMPARE OK") return true end
   if not c1 then
-    return false, k1, "COMPARE FAIL side1"
+    return false, k1
   end
-  return false, k2, "COMPARE FAIL side2"-- yes
+  return false, k2
 end
 
 -- Ensure t1 keys are a subset of t2 keys. Returns the first incorrect
