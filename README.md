@@ -1,6 +1,6 @@
 ## Inspiration
 
-The covid-19 pandemic has exacerbated mental health concerns and caused a work-from-home movement along with forcing counseling virtual. One tool championed by Dr. Russ Harris, the author of international best-seller *The Happiness Trap* is called **'The Choice Point'**. This tool provides a way to quickly identify the source of your biggest problems (and recognize what you are doing that’s making them worse) and plan how to deal with them effectively. It's a guide to reducing your suffering; a map to take your life in a meaningful direction.
+The covid-19 pandemic has exacerbated mental health concerns and caused a work-from-home movement along with forcing counseling virtual. One tool counselors use to help keep their clients working to be mindful and actively work towards bettering their lives. The tool is championed by Dr. Russ Harris, the author of international best-seller *The Happiness Trap* it's called **'The Choice Point'** and it provides a way to quickly identify the source of your biggest problems (and recognize what you are doing that’s making them worse) and plan how to deal with them effectively. It's a guide to reducing your suffering; a map to take your life in a meaningful direction.
 
 ## What it does
 
@@ -13,6 +13,9 @@ choicepoint.space is a web-based dashboard to help counselors implement this str
 - Messaging system between counselors and clients
 - Goal setting
 - Data visualization
+- Complete database 
+- Back-end functionality
+- Responsive UI (Bootstrap)
 
 ## How we built it
 

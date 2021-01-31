@@ -92,7 +92,8 @@ export default {
       this.todos.forEach(element =>{
         console.log(element.title)
         var data = {
-          score: '0',
+          score: 2,
+          userid: 69,
           description: element.title,
           datestamp: '20110911'
         }
