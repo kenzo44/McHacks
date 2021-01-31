@@ -121,9 +121,13 @@ export function delGoal(userID, goalID) {
 // Used for post request
 async function postData(url = '', data = {}) {
   const response = await fetch(url, {
+    body: JSON.stringify(data),
     method: 'POST',
-    mode: 'no-cors',
-    body: JSON.stringify(data)
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    "Access-Control-Allow-Origin":"*"
   })
   //return await response.json()
 }

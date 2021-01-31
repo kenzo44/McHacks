@@ -81,10 +81,10 @@ export default {
       this.todos.forEach(element =>{
         console.log(element.title)
         var data = {
-          //score: 2,
-          //yoserid: 69,
-          description: element.title
-          //datestamp: '20110911'
+          score: 2,
+          userid: 69,
+          description: element.title,
+          datestamp: '20110911'
         }
         fuck.postTask(69, data)
         })
