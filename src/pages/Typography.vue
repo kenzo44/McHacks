@@ -87,22 +87,13 @@ export default {
 }
 
 .input-field {
-  flex-grow: 1;
-}
-
-.waves-effect {
-  width: 20px;
+  flex-grow: 8;
 }
 
 .inputarea {
   width: 90%;
 
 }
-
-/*.collection {
-  flex-direction: column;
-  justify-content: space-between;
-}*/
 
 .delete-text {
   color: red;
@@ -113,6 +104,25 @@ export default {
 .main-panel {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.collection {
+  justify-content: left;
+  line-height: 20px;
+  padding: 10px;
+  flex-direction: column;
+
+}
+
+.collection-item {
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+label {
+  width: 100%;
   justify-content: space-between;
 }
 
