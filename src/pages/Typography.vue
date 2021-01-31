@@ -2,6 +2,7 @@
   <div class="app">
     <div class="container">
       <div class="text-div">
+      <h3>Daily Behaviors Activity Tracker</h3>
       <p class="some-text">Towards Moves – Actions that bring us closer to the person we truly want to be.
         These are actions that bring us closer to the people and experiences that matter most to us. </p>
       <p class="some-text">
@@ -105,7 +106,7 @@ export default {
 
 
 .header{
-  margin-top: 100px;
+  margin-top: 75px;
 }
 .inputarea{
   width: 60%;
@@ -216,11 +217,6 @@ export default {
   // background-color: #3a0d9b;
 }
 
-.text-div {
-  margin-top: 50px;
-  margin-bottom: -60px;
-}
-
 
 label {
   width: 100%;
@@ -231,7 +227,6 @@ label {
   flex-grow: 1;
 }
 .text-div {
-  margin-top: 50px;
   margin-bottom: -60px;
 }
 
