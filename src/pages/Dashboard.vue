@@ -39,7 +39,7 @@
 <!-- Calendar -->
       <div class="caly col-md-6 col-12">
         <div class="calendar">
-	
+
 		<v-simple-calendar :type="type" :weekdayFormat="'cccccc'" :value="selectedRange" @change="changeValue"></v-simple-calendar>
 	</div>
       </div>
@@ -76,18 +76,18 @@ export default {
       statsCards: [
         {
           type: "warning",
-          icon: "ti-server",
-          title: "Capacity",
-          value: "105GB",
-          footerText: "Updated now",
+          icon: "ti-arrow-top-right",
+          title: "Toward Moves",
+          value: "68",
+          footerText: "This Week",
           footerIcon: "ti-reload"
         },
         {
           type: "success",
-          icon: "ti-wallet",
-          title: "Revenue",
-          value: "$1,345",
-          footerText: "Last day",
+          icon: "ti-clipboard",
+          title: "Behavior Activities",
+          value: "4",
+          footerText: "Entered Today",
           footerIcon: "ti-calendar"
         },
         {
@@ -169,7 +169,7 @@ export default {
           height: "245px"
         }
       },
-      
+
       preferencesChart: {
         data: {
           labels: ["62%", "32%", "6%"],
@@ -177,7 +177,7 @@ export default {
         },
         options: {}
       },
-      
+
     };
   },
   methods: {
@@ -198,12 +198,20 @@ export default {
   background-color: #FFFFFF;
   color: #333;
   font-size: 18px;
-	
+
 	font-family: 'Muli', "Helvetica", Arial, sans-serif;
 }
 .vcs-clickable {
   background-color: #fff;
   border-radius: 10px;
+}
+
+.ti-arrow-top-right {
+  color: green;
+}
+
+.ti-clipboard {
+  color: #ba8a10;
 }
 
 @media only screen and (max-width: 574px) {
