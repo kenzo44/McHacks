@@ -1,4 +1,5 @@
 <template>
+<card>
 	<div>
     <h1>Goals and Values</h1>
     <p>"Goals are things that you are aiming for in the future: things you want to get, have, or achieve. In contrast,
@@ -28,7 +29,7 @@
     </div>
     </div>
 	</div>
-
+</card>
 </template>
 
 <script>
