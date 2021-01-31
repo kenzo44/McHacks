@@ -93,10 +93,21 @@ export default {
           description: element.title,
           datestamp: '20110911'
         }
-        fuck.postTask(69, data)
+      fuck.postTask(69, data)
         })
-      while(this.todos.length != 0) {
-        this.deleteTodo(0)
+      if(this.todos.length == 0 ) {
+        this.$notify({
+          group: 'foo',
+          title: 'Nothing to upload',
+        })
+      } else {
+        while(this.todos.length != 0) {
+          this.deleteTodo(0)
+        }
+        this.$notify({
+          group: 'foo',
+          title: 'Successfully uploaded to DB',
+        })
       }
     },
   },
