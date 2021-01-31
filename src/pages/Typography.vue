@@ -1,6 +1,13 @@
 <template>
   <div class="app">
     <div class="container">
+      <div class="text-div">
+      <p class="some-text">Towards Moves – Actions that bring us closer to the person we truly want to be.
+        These are actions that bring us closer to the people and experiences that matter most to us. </p>
+      <p class="some-text">
+        Away Moves – Actions that pull us off-course or further away from the person we truly want to be in a situation.
+        In other words, doing things that will make a situation worse.</p>
+      </div>
       <div class="row header">
         <h1 class="col s6 offset-s3 center-align teal-text">What did you do today?</h1>
       </div>
@@ -8,10 +15,9 @@
         <form @submit.prevent="submitTodo" class="col s6 offset-s3">
           <div class="input-field">
             <i class="material-icons prefix"></i>
-            <textarea v-model="newTodo" id="icon_prefix2" class="inputarea"></textarea>
-            <label for="icon_prefix2"></label>
+            <input required placeholder="Create new task..." type="text" v-model="newTodo" id="icon_prefix2" class="inputarea">
+            <input type="submit" value="Add" class="nice-btn">
           </div>
-          <button class="btn waves-effect col s12">Add</button>
         </form>
       </div>
       <div class="row">
@@ -20,12 +26,12 @@
           <li class="collection-item" v-for="todo in todos" :key="todo.id">
             <p>
               <label>
-                <span>{{todo.title}}</span>
+                <span>{{todo.title}} </span>
                   <select name = "type" id = "type">
                     <option value = "towards">Towards</option>
                     <option value = "away">Away</option>
                   </select>
-                <span>
+                <span style="font-size: 25px; padding: 40px;">
                   <a @click.prevent="deleteTodo(todo)">
                     <i class="material-icons right delete-text">X</i>
                   </a>
@@ -34,7 +40,9 @@
             </p>
           </li>
           </ul>
-        <button @click.prevent="submit()" class="btn waves-effect col s12">Submit</button>
+          <div class="submission">
+        <input type="Submit" value ="Upload to DB" @click.prevent="submit()" class="nice-btns">
+        </div>
       </div>
       </div>
     </div>
@@ -99,6 +107,48 @@ export default {
 .header{
   margin-top: 100px;
 }
+.inputarea{
+  width: 60%;
+  max-width: 45rem;
+  padding: 1em;
+  margin: 1em auto;
+  overflow: auto;
+  font-size: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0.25rem 1rem rgba(0,0,0,0.25);
+  line-height: 24px;
+}
+
+.better-way{
+  list-style-type: none;
+  padding: 30px;
+  font-size: 30px;
+}
+.nice-btn {
+  margin-left: 50px;
+  width: 10em;
+  height: 4.5em;
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: -3px;
+  box-shadow: 0px 0.25rem 1rem rgba(0,0,0,0.25);
+  background-color: #340088;
+  color: #fff;
+  border: none;
+}
+
+.nice-btns {
+  width: 9em;
+  height: 4.5em;
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: -3px;
+  border-radius: 10;
+  color: #fff;
+  border: none;
+  background-color: #1CB5E0;  
+  text-align: center;
+}
 
 .col {
   display: flex;
@@ -134,11 +184,17 @@ export default {
 }
 
 .collection {
+  list-style-type: none;
   justify-content: left;
   line-height: 20px;
   padding: 10px;
   flex-direction: column;
-
+}
+.collection li{
+  padding: 10px;
+  background-color: #fff;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .col {
@@ -164,6 +220,10 @@ label {
 
 .content {
   flex-grow: 1;
+}
+.text-div {
+  margin-top: 50px;
+  margin-bottom: -60px;
 }
 
 </style>
