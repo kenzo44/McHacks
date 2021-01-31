@@ -2,10 +2,10 @@
 
 ]]
 
---[[ LAPIS MODULES ]]
-local db = require "lapis.db"
-local Application = require("lapis.application")
-local Model = require("lapis.db.model").Model
+-- [[ LAPIS MODULES ]]
+local DB = require "lapis.db"
+local APPLICATION = require("lapis.application")
+local MODEL = require("lapis.db.model").Model
 
 --[[ ETC MODULES ]]
 local ParamUtil = require "ParamUtil"

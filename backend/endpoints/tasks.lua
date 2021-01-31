@@ -2,14 +2,14 @@
   This module implements the tasks system.
 ]]
 
--- [[ LAPIS MODULES  ]]
+-- [[ LAPIS MODULES ]]
 local DB = require "lapis.db"
 local APPLICATION = require("lapis.application")
 local MODEL = require("lapis.db.model").Model
 
 -- [[ ETC MODULES ]]
-local Builder = require "ResponseBuilder"
 local ParamUtil = require "ParamUtil"
+local Builder = require "ResponseBuilder"
 
 -- [[ GLOBAL LAPIS CONSTANTS ]]
 local RESPOND_TO = APPLICATION.respond_to
