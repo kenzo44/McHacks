@@ -20,7 +20,9 @@
     "vue": "^2.6.10",
     "vue-clickaway": "^2.1.0",
     "vue-notifyjs": "^0.3.0",
-    "vue-router": "^3.0.1"
+    "vue-pull-refresh": "^0.2.7",
+    "vue-router": "^3.0.1",
+    "vue-spring-calendar": "^0.2.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",

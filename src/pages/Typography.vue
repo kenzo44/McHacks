@@ -107,33 +107,54 @@ export default {
 }
 
 .input-field {
-  flex-grow: 1;
-}
-
-.btn {
-  display: flex;
-  flex-grow: none;
+  flex-grow: 8;
 }
 
 .inputarea {
-  width: 80%;
-}
+  width: 90%;
 
-.collection {
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.list-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .delete-text {
   color: red;
   font-size: 20px;
   justify-content: right;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+<<<<<<< HEAD
+.list-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+=======
+.collection {
+  justify-content: left;
+  line-height: 20px;
+  padding: 10px;
+  flex-direction: column;
+
+}
+
+.collection-item {
+  flex-direction: row;
+  justify-content: space-around;
+
+>>>>>>> 286440fdc28d8c7264c047ab8d003f03835fadc8
+}
+
+label {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content {
+  flex-grow: 1;
 }
 
 </style>
