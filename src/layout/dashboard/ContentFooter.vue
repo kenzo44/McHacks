@@ -4,7 +4,7 @@
       <nav>
         <ul>
           <li>
-            <router-link :to="{path:'/admin'}">McHacks 2021: Choice Point</router-link>
+            <router-link :to="{path:'/admin'}">McHacks 2021: The Choice Point</router-link>
           </li>
         </ul>
       </nav>
