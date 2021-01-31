@@ -3,7 +3,7 @@
 **************************/
 
 // Site adress
-var site = 'http://localhost:8080'
+var site = 'http://localhost:8079'
 
 /****************
 * Get requests *
@@ -73,7 +73,7 @@ export function postUser() {
 
 // Creates new task
 export function postTask(userID, task) {
-  const url = site + '/tasks/' + userID + '/new'
+  const url = site + '/tasks/new'// + userID + '/new'
   postData(url, task)
 }
 
@@ -119,13 +119,17 @@ export function delGoal(userID, goalID) {
 *******************/
 
 // Used for post request
-async function postData(url = '', data) {
+async function postData(url = '', data = {}) {
   const response = await fetch(url, {
+    body: JSON.stringify(data),
     method: 'POST',
-    mode: 'no-cors',
-    body: JSON.stringify(data)
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    "Access-Control-Allow-Origin":"*"
   })
-  return await response.json()
+  //return await response.json()
 }
 
 // Used for get request
