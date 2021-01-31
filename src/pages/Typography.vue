@@ -151,6 +151,12 @@ export default {
 
 }
 
+.btn {
+  background-image: linear-gradient(#340088, #1CB5E0);
+  color: #fff;
+  // background-color: #3a0d9b;
+}
+
 label {
   width: 100%;
   justify-content: space-between;
