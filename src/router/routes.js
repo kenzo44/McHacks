@@ -24,7 +24,7 @@ const routes = [
       },
       {
         path: "stats",
-        name: "stats",
+        name: "User Profile",
         component: UserProfile
       },
       {
@@ -39,12 +39,12 @@ const routes = [
       },
       {
         path: "typography",
-        name: "typography",
+        name: "Daily Activity",
         component: Typography
       },
       {
         path: "table-list",
-        name: "table-list",
+        name: "Goals & Values",
         component: TableList
       }
     ]
